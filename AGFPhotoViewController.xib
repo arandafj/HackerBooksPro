@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AGFPhotoViewController">
+            <connections>
+                <outlet property="photoView" destination="N37-ES-vCr" id="jI8-ll-PHt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VJO-8e-QEV">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N37-ES-vCr"/>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXP-ML-KAg">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="9oe-ED-NFI"/>
+                            </constraints>
+                            <items>
+                                <barButtonItem systemItem="camera" id="wld-e9-adM">
+                                    <connections>
+                                        <action selector="takePicture:" destination="-1" id="XSM-ed-w82"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="z4R-5t-c7g"/>
+                                <barButtonItem systemItem="trash" id="hh8-nV-ejY">
+                                    <connections>
+                                        <action selector="deletePhoto:" destination="-1" id="BLL-Kw-JXy"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="hXP-ML-KAg" firstAttribute="width" secondItem="N37-ES-vCr" secondAttribute="width" id="Icy-io-4gf"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="VJO-8e-QEV" secondAttribute="trailing" id="9uU-zO-zV6"/>
+                <constraint firstItem="VJO-8e-QEV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tu9-sv-h0O"/>
+                <constraint firstAttribute="bottom" secondItem="VJO-8e-QEV" secondAttribute="bottom" id="XRY-D5-1lE"/>
+                <constraint firstItem="VJO-8e-QEV" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="mAf-Ai-ssa"/>
+                <constraint firstItem="VJO-8e-QEV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="y8R-LY-ama"/>
+            </constraints>
+            <point key="canvasLocation" x="693" y="357"/>
+        </view>
+    </objects>
+</document>

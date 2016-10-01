@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AGFNoteViewController">
+            <connections>
+                <outlet property="creationDate" destination="qV4-DF-Miy" id="RVd-1A-5cg"/>
+                <outlet property="image" destination="Hpc-BA-LqE" id="bf4-1z-zIP"/>
+                <outlet property="mapSnapshot" destination="HvV-Jq-zFg" id="hhF-iG-huL"/>
+                <outlet property="text" destination="vsX-Ns-Rck" id="h5e-WP-k4R"/>
+                <outlet property="titleView" destination="Kl4-Qk-DsR" id="HAI-gg-wfR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Edo-5D-nqr">
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QnU-v7-qAG">
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Title" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kl4-Qk-DsR">
+                                    <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="20"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qV4-DF-Miy">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OfT-fD-ew5">
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hpc-BA-LqE"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HvV-Jq-zFg"/>
+                            </subviews>
+                        </stackView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="vsX-Ns-Rck">
+                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Kl4-Qk-DsR" firstAttribute="width" secondItem="Edo-5D-nqr" secondAttribute="width" id="01P-U0-s07"/>
+                        <constraint firstItem="qV4-DF-Miy" firstAttribute="width" secondItem="Edo-5D-nqr" secondAttribute="width" id="4U7-zP-d94"/>
+                        <constraint firstItem="QnU-v7-qAG" firstAttribute="width" secondItem="Edo-5D-nqr" secondAttribute="width" id="UfA-pB-AHG"/>
+                        <constraint firstItem="vsX-Ns-Rck" firstAttribute="width" secondItem="OfT-fD-ew5" secondAttribute="width" id="fSE-qP-CwU"/>
+                        <constraint firstItem="OfT-fD-ew5" firstAttribute="width" secondItem="QnU-v7-qAG" secondAttribute="width" id="xCK-Kw-GIg"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Edo-5D-nqr" secondAttribute="bottom" id="6XI-Z5-OJY"/>
+                <constraint firstItem="Edo-5D-nqr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="E8k-IT-MeY"/>
+                <constraint firstItem="Edo-5D-nqr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KXY-Bj-7ya"/>
+                <constraint firstAttribute="trailing" secondItem="Edo-5D-nqr" secondAttribute="trailing" id="m8m-ey-q4J"/>
+            </constraints>
+            <point key="canvasLocation" x="422" y="137"/>
+        </view>
+    </objects>
+</document>

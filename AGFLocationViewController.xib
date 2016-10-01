@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AGFLocationViewController">
+            <connections>
+                <outlet property="mapView" destination="2qq-lG-1NI" id="2Pl-vB-TdV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="k7g-s6-L5K">
+                    <subviews>
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2qq-lG-1NI"/>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5f-Z6-WPk">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="2TP-kS-O6o"/>
+                            </constraints>
+                            <items>
+                                <barButtonItem title="Standard" id="GJX-J0-4g8">
+                                    <connections>
+                                        <action selector="standardMap:" destination="-1" id="CWa-aX-6TQ"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="l3N-Zg-Zvs"/>
+                                <barButtonItem title="Satelite" id="3Iq-zt-Zca">
+                                    <connections>
+                                        <action selector="satelliteMap:" destination="-1" id="fvM-AL-DYO"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="NOs-W1-CPW"/>
+                                <barButtonItem title="Hybrid" id="qqk-Yj-Ubc">
+                                    <connections>
+                                        <action selector="HybridMap:" destination="-1" id="sb5-0l-es9"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="2qq-lG-1NI" firstAttribute="width" secondItem="k7g-s6-L5K" secondAttribute="width" id="HMf-iP-37f"/>
+                        <constraint firstItem="c5f-Z6-WPk" firstAttribute="width" secondItem="k7g-s6-L5K" secondAttribute="width" id="rey-bm-wcR"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="k7g-s6-L5K" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="9TV-MS-jrH"/>
+                <constraint firstAttribute="trailing" secondItem="k7g-s6-L5K" secondAttribute="trailing" id="BSK-Yg-yYq"/>
+                <constraint firstItem="k7g-s6-L5K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FvM-Lg-SGq"/>
+                <constraint firstItem="k7g-s6-L5K" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JpJ-PN-dUl"/>
+                <constraint firstAttribute="bottom" secondItem="k7g-s6-L5K" secondAttribute="bottom" id="mYZ-B5-Js6"/>
+            </constraints>
+            <point key="canvasLocation" x="654" y="389"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Annotation" representedClassName="AGFAnnotation" syncable="YES">
+        <attribute name="creationDate" attributeType="Date" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <attribute name="modificationDate" attributeType="Date" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="book" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="annotations" inverseEntity="Book" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Image" inverseName="annotacion" inverseEntity="Image" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Location" inverseName="annotations" inverseEntity="Location" syncable="YES"/>
+    </entity>
+    <entity name="Author" representedClassName="AGFAuthor" syncable="YES">
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="books" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="authors" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="Book" representedClassName="AGFBook" syncable="YES">
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pdfURL" attributeType="String" syncable="YES"/>
+        <attribute name="photoURL" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="annotations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Annotation" inverseName="book" inverseEntity="Annotation" syncable="YES"/>
+        <relationship name="authors" toMany="YES" deletionRule="Nullify" destinationEntity="Author" inverseName="books" inverseEntity="Author" syncable="YES"/>
+        <relationship name="pdf" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PDF" inverseName="book" inverseEntity="PDF" syncable="YES"/>
+        <relationship name="photo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Photo" inverseName="book" inverseEntity="Photo" syncable="YES"/>
+        <relationship name="tags" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="books" inverseEntity="Tag" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName="AGFImage" syncable="YES">
+        <attribute name="imageData" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="annotacion" maxCount="1" deletionRule="Nullify" destinationEntity="Annotation" inverseName="image" inverseEntity="Annotation" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="AGFLocation" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <relationship name="annotations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Annotation" inverseName="location" inverseEntity="Annotation" syncable="YES"/>
+        <relationship name="snap" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Snap" inverseName="location" inverseEntity="Snap" syncable="YES"/>
+    </entity>
+    <entity name="PDF" representedClassName="AGFPDF" syncable="YES">
+        <attribute name="pdfData" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="book" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="pdf" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="Photo" representedClassName="AGFPhoto" syncable="YES">
+        <attribute name="photoData" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="book" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="photo" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="Snap" representedClassName="AGFSnap" syncable="YES">
+        <attribute name="snapshotData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="snap" inverseEntity="Location" syncable="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName="AGFTag" syncable="YES">
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="books" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="tags" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Annotation" positionX="171" positionY="-216" width="128" height="150"/>
+        <element name="Author" positionX="-459" positionY="-378" width="128" height="75"/>
+        <element name="Book" positionX="-189" positionY="-450" width="128" height="180"/>
+        <element name="Image" positionX="-126" positionY="36" width="128" height="75"/>
+        <element name="Location" positionX="-207" positionY="-207" width="128" height="120"/>
+        <element name="PDF" positionX="81" positionY="-468" width="128" height="75"/>
+        <element name="Photo" positionX="153" positionY="-342" width="128" height="75"/>
+        <element name="Snap" positionX="-531" positionY="-48" width="128" height="75"/>
+        <element name="Tag" positionX="-531" positionY="-225" width="128" height="75"/>
+    </elements>
+</model>
